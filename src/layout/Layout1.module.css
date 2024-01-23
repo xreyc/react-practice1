@@ -1,0 +1,18 @@
+.layout1-container {
+    display:  flex;
+    flex-direction: column;
+}
+.layout1-container>div:first-child {
+    height: 50px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.layout1-content-container {
+    display:  flex;
+    flex-direction: row;
+}
+.layout1-content-container>div:first-child {
+    width: 300px;
+    height: calc(100vh - 60px);
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
