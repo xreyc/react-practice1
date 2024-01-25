@@ -1,0 +1,19 @@
+.product-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+.product-item {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.product-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-image {
+    height: 200px;
+}

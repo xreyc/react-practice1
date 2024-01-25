@@ -1,29 +1,23 @@
 import { useEffect, useState } from "react"
-import Component4 from "./components/Component4"
+import { MemoryRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout1 from "./layout/Layout1"
-import Component3 from "./pages/Component3"
 import ProductScreen from "./pages/ProductScreen"
 import StoreScreen from "./pages/StoreScreen"
+import LoginPage from "./pages/LoginPage"
+import ProductFormScreen from "./pages/ProductFormScreen"
 
 function App() {
-  const [page, setPage] = useState(1);
-  
-  const navigateTo = (pageNumber) => {
-    setPage(pageNumber);
-  }
-
-
-  const [data1, setData1] = useState(1);
-
-
   return (
-    <Layout1>
-      <button onClick={() => setPage(1)}>Product</button>
-      <button onClick={() => setPage(2)}>Store</button>
-      
-      {page == 1 && <ProductScreen navigateTo={navigateTo}/>}
-      {page == 2 && <StoreScreen navigateTo={navigateTo} data1={data1}/>}
-    </Layout1>
+    <Router>
+      <Layout1>
+      <Routes>
+        <Route path="/" element={<ProductScreen/>} />
+        <Route path="/product_form" element={<ProductFormScreen/>} />
+        <Route path="/stores" element={<StoreScreen/>} />
+        <Route path="/login" element={<LoginPage/>} />
+      </Routes>
+      </Layout1>
+    </Router>
   )
 }
 
